@@ -12,7 +12,7 @@ public class Inventario
         Producto b = new Producto("002", "Dell", 5);
         Producto c = new Producto("003", "Monitor Samsung", 2);
         Producto d = new Producto("004", "Mouse", 100);
-        Producto e = new Producto("005", "Headset", 25);
+        Producto e = new Producto("005", "Teclado", 25);
 
         ListadeProductos.Add(a);
         ListadeProductos.Add(b);
@@ -59,6 +59,57 @@ public class Inventario
 
         Console.WriteLine("Ingreso de Productos al Inventario");
         Console.WriteLine("**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "+");
+    }
+
+ public void salidaDeInventario() {
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Salida de Productos al Inventario");
+        Console.WriteLine("*********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "-");
+    }
+
+    public void ajusteNegativoDeInventario() {
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Ajuste Negativo de Inventario");
+        Console.WriteLine("*****************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "-");
+    }
+
+    public void ajustePositivoDeInventario() {
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Salida Positivo de Inventario");
+        Console.WriteLine("*****************************");
         Console.Write("Ingrese el codigo del producto: ");
         codigo = Console.ReadLine();
         Console.Write("Ingrese la cantidad del producto: ");
